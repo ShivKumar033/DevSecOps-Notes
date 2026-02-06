@@ -15,6 +15,8 @@ Verify
 ```bash
 vault version
 ```
+
+---
 ---
 ### Step 2. Start Vault (Dev Mode)
 ```bash
@@ -37,6 +39,7 @@ vault status
 #### What You Do With Vault (IN SHORT)
 Vault = **Store → Control → Rotate → Audit secrets**
 
+---
 ---
 ### Step 3. Store Secrets and Delete Secrets (Basic Use)
 Enable KV engine:
@@ -82,8 +85,8 @@ vault kv metadata delete secret/api
 ```
 
 ---
-
-### Step 5.  Enable a secrets engine (Different Different Engine Use)
+---
+### Step 4.  Enable a secrets engine (Different Different Engine Use)
 
 ```bash
 vault secrets enable -path=custom-name <engine>
@@ -194,9 +197,9 @@ vault secrets disable <path>
 vault secrets disable aws/
 ```
 
-
 ---
-### Step 4. Control Access (Most Important)
+---
+### Step 5. Control Access (Most Important)
 Create policy:
 ```bash
 nano read-api.hcl
@@ -207,8 +210,8 @@ path "secret/data/api" {
    capabilities = ["read"] 
 }
 ```
-Apply:
 
+Apply:
 ```
 vault policy write read-api read-api.hcl
 ```
@@ -223,11 +226,12 @@ Test:
 export VAULT_TOKEN=s.limitedtoken vault kv get secret/api
 ```
 
-👉 **You learn:** least privilege & blast radius control.
+**You learn:** least privilege & blast radius control.
 
 ---
+---
 
-### Step 5. App Authentication (Real Use Case)
+### Step 6. App Authentication (Real Use Case)
 
 Enable AppRole:
 ```bash
@@ -253,10 +257,11 @@ vault write auth/approle/login \
 	secret_id=YYYY
 ```
 
-👉 **You learn:** how apps authenticate **without passwords**.
+**You learn:** how apps authenticate **without passwords**.
 
 ---
-### Step 6.  Dynamic Secrets (🔥 Killer Feature)
+---
+### Step 7.  Dynamic Secrets (🔥 Killer Feature)
 
 Enable DB secrets (example):
 ```bash 
@@ -268,10 +273,11 @@ Vault can:
 - Auto-expire them
 - Rotate creds automatically
 
-👉 **You learn:** secrets **should not be static**.
+**You learn:** secrets **should not be static**.
 
 ---
-### Step 7. Environment Variable Injection
+---
+### Step 8. Environment Variable Injection
 ```bash
 export DB_PASS=$(vault kv get -field=password secret/db)
 ```
@@ -280,8 +286,7 @@ Use in app:
 ```bash
 python app.py
 ```
-
-👉 **You learn:** secure secret delivery.
+**You learn:** secure secret delivery.
 
 ---
 ### Step 8. Audit Logging (Blue Team Angle)
@@ -289,8 +294,7 @@ python app.py
 ```bash
 vault audit enable file file_path=/tmp/vault.log
 ```
-
-👉 **You learn:** who accessed what & when.
+**You learn:** who accessed what & when.
 
 ---
 ## 🌐 Vault UI (Optional but Useful)
