@@ -5,7 +5,16 @@
 DevSecOps = **Dev + Sec + Ops**  
 Security is **automated** and integrated into the CI/CD pipeline.
 
-[CI/CD](/main/00-CI-CD)
+[00-CI/CD](/main/00-CI-CD)
+[01-SAST-SCA](/main/01-SAST-SCA)
+[03-Container-Security](/main/03-Container-Security)
+[04-kubernetes-security](/main/04-kubernetes-security)
+[05-iac-security](/main/05-iac-security)
+[06-cloud-security](/main/06-cloud-security)
+[07-Secret-management-tools](/main/07-Secret-management-tools)
+[08-Source%20Code%20Review](/main/08-Source%20Code%20Review)
+[Project-List](/main/Project)
+[Supply%20Chain%20Security](/main/Supply%20Chain%20Security)
 
 ---
 ## Principles
