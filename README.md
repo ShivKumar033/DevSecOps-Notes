@@ -5,7 +5,7 @@
 DevSecOps = **Dev + Sec + Ops**  
 Security is **automated** and integrated into the CI/CD pipeline.
 
-[CI/CD](https://example.com](https://github.com/ShivKumar033/DevSecOps-Notes/tree/main/00-CI-CD)
+[CI/CD](/main/00-CI-CD)
 
 ---
 ## Principles
