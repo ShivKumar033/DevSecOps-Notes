@@ -12,9 +12,9 @@ Security is **automated** and integrated into the CI/CD pipeline.
 [05-iac-security](/main/05-iac-security)
 [06-cloud-security](/main/06-cloud-security)
 [07-Secret-management-tools](/main/07-Secret-management-tools)
-[08-Source%20Code%20Review](/main/08-Source%20Code%20Review)
+[08-Source Code Review](/main/08-Source 0Code Review)
 [Project-List](/main/Project)
-[Supply%20Chain%20Security](/main/Supply%20Chain%20Security)
+[Supply Chain Security](/main/Supply Chain Security)
 
 ---
 ## Principles
