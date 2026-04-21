@@ -86,7 +86,7 @@ Why bad:
 gpasswd -d user docker
 ```
 
-## 🔥 Secure `/var/run/docker.sock`
+## Secure `/var/run/docker.sock`
 ### 5️⃣ Never Mount docker.sock Into Containers
 
 ```bash

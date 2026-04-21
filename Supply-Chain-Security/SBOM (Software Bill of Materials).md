@@ -9,6 +9,22 @@ Banking App v1.2
 - PostgreSQL JDBC 42.6
 ```
 
+### Why SBOM is important
+-  SBOM helps organizations handle **software supply chain security**.
+
+**main Benifits:**
+🔎 **Vulnerability tracking**  
+If a vulnerability appears in a library, you instantly know whether your app uses it.
+
+📜 **License compliance**  
+Ensures open-source licenses (MIT, GPL, Apache) are followed.
+
+🚨 **Faster incident response**  
+During security incidents, teams can quickly identify affected applications.
+
+🏢 **Regulatory compliance**  
+Required by many governments and frameworks like **National Institute of Standards and Technology** and **Cybersecurity and Infrastructure Security Agency** guidelines.
+
 # 📦 Types of SBOM
 
 | Type              | When It Is Created  | Use Case                                                     |

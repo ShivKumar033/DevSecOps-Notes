@@ -1,10 +1,10 @@
 ## 1️⃣ Host & Docker daemon auditing (baseline security)
 
-### 🔧 Tool: **Docker Bench for Security**
+### Tool: **Docker Bench for Security**
 
-👉 Checks Docker against **CIS Docker Benchmark**
+Checks Docker against **CIS Docker Benchmark**
 
-### ▶ Run (read-only, safe)
+### Run (read-only, safe)
 ```bash
 docker run --rm -it \
   --net host \
@@ -33,7 +33,7 @@ docker run --rm -it \
 - Privileged containers
 - No user namespace remapping
 
-📌 **Report note**
+ **Report note**
 
 > Host does not comply with CIS Docker Benchmark, increasing risk of container escape.
 
@@ -41,7 +41,7 @@ docker run --rm -it \
 
 ## 2️⃣ Docker image auditing (before deployment)
 
-### 🔧 Tool: **Trivy**
+### Tool: **Trivy**
 
 Scans:
 
@@ -50,12 +50,12 @@ Scans:
 - Secrets
 - Misconfigurations
 
-### ▶ Scan image
+### Scan image
 ```
 trivy image nginx:latest
 ```
 
-### ▶ Misconfig + vuln scan (recommended)
+### Misconfig + vuln scan (recommended)
 ```bash
 trivy image --severity HIGH,CRITICAL --misconfig nginx:latest
 ```
@@ -65,16 +65,16 @@ trivy image --severity HIGH,CRITICAL --misconfig nginx:latest
 CRITICAL: openssl CVE-2023-0464 HIGH: libxml2 CVE-2022-40304
 ```
 
-📌 **Report note**
+**Report note**
 > Image contains critical vulnerabilities exploitable for RCE.
 
 ---
 
 ## 3️⃣ Dockerfile auditing (static analysis)
 
-### 🔧 Tool: **Hadolint**
+### Tool: **Hadolint**
 
-### ▶ Scan Dockerfile
+### Scan Dockerfile
 
 ```bash
 hadolint Dockerfile
@@ -91,7 +91,7 @@ DL3002: Last USER should not be root DL3007: Using latest tag is discouraged
 - `FROM ubuntu:latest`
 - Missing `HEALTHCHECK`
 
-📌 **Fix example**
+ **Fix example**
 ```bash
 FROM ubuntu:22.04 
 RUN useradd -m appuser 
@@ -102,7 +102,7 @@ USER appuser
 
 ## 4️⃣ Image hardening & bloat analysis
 
-### 🔧 Tool: **Dockle**
+### Tool: **Dockle**
 
 Checks:
 - Root usage
@@ -110,7 +110,7 @@ Checks:
 - Sensitive files
 - Best practices
 
-### ▶ Run
+### Run
 ```bash
 dockle nginx:latest
 ```
@@ -122,9 +122,9 @@ WARN - CIS-DI-0001: Container runs as root WARN - CIS-DI-0005: No HEALTHCHECK
 
 ---
 
-### 🔧 Tool: **Dive**
+### Tool: **Dive**
 
-### ▶ Run
+### Run
 ```bash
 dive nginx:latest
 ```
